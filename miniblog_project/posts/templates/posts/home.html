@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microblog</title>
+</head>
+<body>
+    <h1>Bem-vindo(a) ao BlogZinho!</h1>
+    <a href="{% url 'new_post' %}">Nova postagem</a>
+    
+    <h2>Postagens recentes</h2>
+    {% for post in posts %}
+        <div>
+            <p>{{ post.conteudo }}</p>
+            {% if post.imagem %}
+                <img src="{{ post.imagem.url }}" alt="Imagem do post" width="300">
+            {% endif %}
+            <p>Postado em: {{ post.data }}</p>
+            <p>Expira em: {{ post.data_expiracao }}</p>
+        </div>
+    {% empty %}
+        <p>Não há postagens ativas no momento.</p>
+    {% endfor %}
+
+</body>
+</html>
