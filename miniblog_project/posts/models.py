@@ -5,6 +5,8 @@ from PIL import Image
 import io
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.validators import MinLengthValidator, MaxLengthValidator
+from django.utils import timezone
+from datetime import timedelta
 
 class Post(models.Model):
     STATUS_CHOICES = [
@@ -82,7 +84,7 @@ class Post(models.Model):
         choices=STATUS_CHOICES,
         default='ativo')
 
-    expiration = models.DateField()
+    expiration = models.DateField(default=lambda: (timezone.now().date() + timedelta(days=365)))
 
     def __str__(self):
         return f"Post {self.id} - {self.conteudo[:30]}"
