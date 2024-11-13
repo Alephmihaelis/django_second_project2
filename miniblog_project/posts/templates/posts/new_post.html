@@ -1,20 +1,22 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Nova Postagem</title>
 </head>
 <body>
     <h1>Criar nova postagem</h1>
     
+    <div class="form-container">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Criar postagem</button>
     </form>
-    <br>
+    </div>
     <a href="{% url 'home' %}">Voltar à página inicial</a>
 </body>
 </html>

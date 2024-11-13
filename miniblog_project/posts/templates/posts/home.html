@@ -7,27 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Microblog</title>
+    <title>BlogZinho</title>
 </head>
 <body>
     <h1>Bem-vindo(a) ao BlogZinho!</h1>
     <a href="{% url 'new_post' %}">Nova postagem</a>
-    
+
+    <main>
     <h2>Postagens recentes</h2>
+    &nbsp;
     {% for post in posts %}
     <div id="postagens">
+        <br>
             <h1>{{ post.title }}</h1>
             <p>{{ post.content }}</p>
             {% if post.image %}
                 <img src="{{ post.image.url }}" alt="" width="300" title="{{ post.title }}">
             {% endif %}
-            <p>Postado em: {{ post.date }}</p>
-            <p>Expira em: {{ post.expiration }}</p>
+            <p class="center">Postado em: {{ post.date }}</p>
+            <p class="center">Expira em: {{ post.expiration }}</p>
+            <hr size="5">
     </div>
         {% empty %}
         <p>Não há postagens ativas no momento.</p>
     {% endfor %}
 </div>
+</main>
 
 <script>
     if (window.history.replaceState) window.history.replaceState(null, null, window.location.href)
