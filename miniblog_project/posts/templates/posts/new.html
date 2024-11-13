@@ -1,0 +1,15 @@
+
+{% extends 'posts/_base.html' %}
+
+{% block content %}
+
+    <h2>Criar nova postagem</h2>
+    <div class="form-container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Criar postagem</button>
+    </form>
+    </div>
+    <button id="home"><a href="{% url 'home' %}">Voltar para a página inicial</a></button>
+{% endblock %}

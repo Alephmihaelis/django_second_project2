@@ -102,3 +102,11 @@ button {
 button:hover {
     background-color: #5a54e8;
 }
+
+a {
+    text-decoration: none;
+}
+
+#home {
+    background-color: rgb(102, 102, 102);
+}

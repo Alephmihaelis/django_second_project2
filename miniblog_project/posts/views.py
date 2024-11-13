@@ -17,4 +17,7 @@ def new_post(request):
     else:
         form = PostForm()
     
-    return render(request, 'posts/new_post.html', {'form': form})
+    return render(request, 'posts/new.html', {'form': form})
+
+def about(request):
+    return render(request, 'posts/about.html')
