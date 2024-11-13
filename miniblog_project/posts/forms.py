@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
 
         labels = {
             'title': 'Título',
-            'image': 'Imagem',
             'content': 'Conteúdo',
+            'image': 'Imagem',
             'expiration': 'Expiração',
         }
