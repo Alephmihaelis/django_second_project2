@@ -23,3 +23,6 @@ def new_post(request):
 
 def about(request):
     return render(request, 'posts/about.html')
+
+def contact(request):
+    return render(request, 'posts/contact.html')
