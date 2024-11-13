@@ -9,11 +9,10 @@ class PostForm(forms.ModelForm):
         widgets = {
             'expiration': forms.DateInput(attrs={'type': 'date'}),
         }
-'''
+
         labels = {
             'title': 'Título',
             'image': 'Imagem',
             'content': 'Conteúdo',
-            'expiration': 'Expira em',
+            'expiration': 'Expiração',
         }
-'''
