@@ -7,14 +7,14 @@
     <title>Nova Postagem</title>
 </head>
 <body>
-    <h1>Criar Nova Postagem</h1>
+    <h1>Criar nova postagem</h1>
     
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Criar Postagem</button>
+        <button type="submit">Criar postagem</button>
     </form>
-    
+    <br>
     <a href="{% url 'home' %}">Voltar à página inicial</a>
 </body>
 </html>

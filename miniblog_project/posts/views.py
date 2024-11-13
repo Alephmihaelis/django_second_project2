@@ -5,7 +5,7 @@ from .forms import PostForm
 from django.utils import timezone
 
 def home(request):
-    posts = Post.objects.filter(status='ativo', expiration__gte=timezone.now()).order_by('-data')
+    posts = Post.objects.filter(status='ativo', expiration__gte=timezone.now()).order_by('-date')
     return render(request, 'posts/home.html', {'posts': posts})
 
 def new_post(request):
@@ -18,4 +18,3 @@ def new_post(request):
         form = PostForm()
     
     return render(request, 'posts/new_post.html', {'form': form})
-
