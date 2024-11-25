@@ -92,8 +92,8 @@ textarea {
 }
 
 button {
-    padding: 0.8rem;
-    background-color: #6c63ff;
+    padding: 1rem;
+    background-color: #272368;
     color: white;
     font-size: 16px;
     border: none;
@@ -102,8 +102,9 @@ button {
     transition: background-color 0.3s ease;
 }
 
+
 button:hover {
-    background-color: #5a54e8;
+    background-color: white;
 }
 
 a {
